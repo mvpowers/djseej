@@ -1,1 +1,206 @@
-<div>hey</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ SEEJ | Bellflower, CA's Hottest DJ | Unforgettable Beats & Live Performances</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Experience Bellflower, CA's hottest DJ (DJ SEEJ) delivering electrifying sets for clubs, private parties, and major events. Book now for an unforgettable performance.">
+    <meta name="keywords" content="Bellflower DJ, hottest DJ, DJ Bellflower, California DJ, party DJ, club DJ, event DJ, live DJ, music entertainment">
+    <meta name="author" content="DJ SEEJ">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="DJ SEEJ | Bellflower, CA's Hottest DJ">
+    <meta property="og:description" content="DJ SEEJ | Bellflower, CA's top DJ, ready to ignite your event with high-energy performances and cutting-edge beats. Book your event now!">
+    <meta property="og:image" content="assets/meta.png">
+    <meta property="og:url" content="https://djseej.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bellflower, CA's Hottest DJ">
+    <meta name="twitter:description" content="Book the best DJ in Bellflower, CA for a night of high-energy beats and unforgettable music. Elevate your event today!">
+    <meta name="twitter:image" content="assets/meta.png">
+
+    <!--    favicon-->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <!-- Optional: Canonical URL -->
+    <link rel="canonical" href="https://djseej.com">
+    <style>
+        html, body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            max-height: 250px;
+            max-width: 250px;
+        }
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+            animation: gradientAnimation 15s ease infinite;
+            height: 100dvh;
+            width: 100dvw;
+            overflow: hidden;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(0deg, #ff9a9e, #fad0c4, #fad0c4);
+            }
+            25% {
+                background: linear-gradient(90deg, #fad0c4, #fbc2eb, #ff9a9e);
+            }
+            50% {
+                background: linear-gradient(180deg, #fbc2eb, #a18cd1, #ff9a9e);
+            }
+            75% {
+                background: linear-gradient(270deg, #a18cd1, #ff9a9e, #fad0c4);
+            }
+            100% {
+                background: linear-gradient(360deg, #ff9a9e, #fad0c4, #fad0c4);
+            }
+        }
+        /* Style for the bouncing, spinning image */
+        #bouncing-img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        /* Style for the moving text */
+        .moving-text {
+            position: absolute;
+            font-size: 3em;
+            white-space: nowrap;
+            color: chartreuse;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .content {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 70dvh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100dvw;
+            font-family: 'Arial', sans-serif;
+            color: #73ff97;
+            font-weight: 700;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        a {
+            all: unset;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            color: #0a53be;
+            text-decoration: underline;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+<!-- The image file "placeholder.webp" must be located in the same folder -->
+<img src="assets/djseej.jpg" id="bouncing-img" alt="the illest of djs">
+<div class="content">
+    <h1>DJ SEEJ</h1>
+    <a href="https://soundcloud.com/cj-caluag">SOUNDCLOUD</a>
+</div>
+<script>
+  (function() {
+    const img = document.getElementById('bouncing-img');
+    let x = Math.random() * (window.innerWidth - img.width);
+    let y = Math.random() * (window.innerHeight - img.height);
+    let dx = 2;
+    let dy = 2;
+
+    function animate() {
+      x += dx;
+      y += dy;
+
+      if (x <= 0 || x + img.width >= window.innerWidth) {
+        dx = -dx;
+      }
+      if (y <= 0 || y + img.height >= window.innerHeight) {
+        dy = -dy;
+      }
+
+      img.style.left = x + 'px';
+      img.style.top = y + 'px';
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+  })();
+
+  // Moving Text Animation
+  (function() {
+    const strings = ["Weddings", "Mobile (i have a tesla)", "Birthday parties", "Tailgates", "Quinceaneras 👀", "Galentine's Day 👀👀", "iPhone > Android"];
+    const duration = 3000;
+
+    function animateText(text) {
+      return new Promise(resolve => {
+        const textElem = document.createElement('div');
+        textElem.className = 'moving-text';
+        textElem.innerText = text;
+        document.body.appendChild(textElem);
+
+        // Randomly choose the direction: left-to-right or right-to-left
+        const direction = Math.random() < 0.5 ? 'ltr' : 'rtl';
+
+        // Random starting and ending vertical positions
+        const startY = Math.random() * (window.innerHeight - 50);
+        const endY = Math.random() * (window.innerHeight - 50);
+
+        let startX, endX;
+        if (direction === 'ltr') {
+          startX = -200; // start off-screen left
+          endX = window.innerWidth; // end off-screen right
+        } else {
+          startX = window.innerWidth; // start off-screen right
+          endX = -200; // end off-screen left
+        }
+
+        // Set initial position and apply transition for smooth movement
+        textElem.style.left = startX + 'px';
+        textElem.style.top = startY + 'px';
+        textElem.style.transition = `all ${duration}ms linear`;
+
+        // Force reflow to ensure the transition starts
+        void textElem.offsetWidth;
+
+        // Trigger the movement to the final position
+        textElem.style.left = endX + 'px';
+        textElem.style.top = endY + 'px';
+
+        // After the duration, remove the element and resolve the promise
+        setTimeout(() => {
+          textElem.remove();
+          resolve();
+        }, duration);
+      });
+    }
+
+    // Sequentially animate each text string (loops forever)
+    async function animateTexts() {
+      while (true) {
+        for (let str of strings) {
+          await animateText(str);
+          // Short delay between each text
+          await new Promise(r => setTimeout(r, 1000));
+        }
+      }
+    }
+    animateTexts();
+  })();
+</script>
+</body>
+</html>
